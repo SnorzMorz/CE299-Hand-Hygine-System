@@ -1,0 +1,15 @@
+sortButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Collections.sort(listOfIDs, ID::compareTo);//if the list is empty, the user will be asked to insert a new ID.
+                //if the list is not empty, it will be sorted in ascending order using Collections.sort
+                boolean check2=listOfIDs.isEmpty();
+                if(check2==true){
+                    JOptionPane.showMessageDialog(null, "The list is empty, please insert some IDs");
+                } else {
+                    Collections.sort(listOfIDs);
+                    JOptionPane.showMessageDialog(null, "the list has been sorted in ascending order");
+                    input2.setText(listOfIDs.toString());
+                }
+            }
+        });
